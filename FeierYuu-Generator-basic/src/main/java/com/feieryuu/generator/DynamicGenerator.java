@@ -51,7 +51,7 @@ public class DynamicGenerator {
         configuration.setDirectoryForTemplateLoading(templateDir);
 
         // 设置模板文件使用的字符集
-        configuration.setDefaultEncoding("utf-8");
+        configuration.setDefaultEncoding("UTF-8");
 
         // 创建模板对象，加载指定模板
         String templateName = new File(inputPath).getName();
