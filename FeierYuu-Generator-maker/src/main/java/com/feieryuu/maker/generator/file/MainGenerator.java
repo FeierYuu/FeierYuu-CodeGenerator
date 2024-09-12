@@ -1,6 +1,4 @@
-package com.feieryuu.generator;
-
-import com.feieryuu.model.MainTemplateConfig;
+package com.feieryuu.maker.generator.file;
 
 import java.io.File;
 
@@ -24,7 +22,7 @@ public class MainGenerator {
         // 输出路径
         String outputPath = projectPath;
 
-        StaticGenerator.copyFilesByRecursive(inputPath, outputPath);
+        StaticFileGenerator.CopyFileByHutool(inputPath, outputPath);
 
 
 
@@ -35,13 +33,6 @@ public class MainGenerator {
     }
 
 
-    public static void main(String[] args)throws Exception {
-        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        mainTemplateConfig.setAuthor("3213");
-        mainTemplateConfig.setLoop(true);
-        mainTemplateConfig.setOutputText("结果");
-        doGenerate(mainTemplateConfig);
-    }
 
 
 }
