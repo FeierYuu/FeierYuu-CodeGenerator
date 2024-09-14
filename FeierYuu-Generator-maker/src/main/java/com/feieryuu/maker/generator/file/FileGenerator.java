@@ -10,7 +10,7 @@ import java.io.File;
  * @author 飞飞鱼
  * @since JDK 1.8
  */
-public class MainGenerator {
+public class FileGenerator {
 
 
     public static void doGenerate(Object model)throws Exception{
@@ -29,7 +29,7 @@ public class MainGenerator {
         String DynamicInputPath = projectPath+ File.separator+"src/main/resources/templates/MyTemplate.java.ftl";
         String DynamicOutputPath = projectPath + File.separator + "acm-template/src/com/yupi/acm/MainTemplate.java";
 
-        DynamicGenerator.doGenerate(DynamicInputPath, DynamicOutputPath, model);
+        DynamicFileGenerator.doGenerate(DynamicInputPath, DynamicOutputPath, model);
     }
 
 

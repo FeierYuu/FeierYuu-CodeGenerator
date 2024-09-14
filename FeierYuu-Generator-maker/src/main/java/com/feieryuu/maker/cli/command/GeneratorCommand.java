@@ -2,7 +2,7 @@ package com.feieryuu.maker.cli.command;
 
 
 import cn.hutool.core.bean.BeanUtil;
-import com.feieryuu.maker.generator.file.MainGenerator;
+import com.feieryuu.maker.generator.file.FileGenerator;
 import com.feieryuu.maker.model.DataModel;
 import lombok.Data;
 import picocli.CommandLine;
@@ -38,7 +38,7 @@ public class GeneratorCommand implements Callable<Integer> {
         DataModel dataModel = new DataModel();
         BeanUtil.copyProperties(this, dataModel);
         System.out.println("配置信息："+ dataModel);
-        MainGenerator.doGenerate(dataModel);
+        FileGenerator.doGenerate(dataModel);
         return 0;
     }
 }

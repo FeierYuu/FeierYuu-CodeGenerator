@@ -1,47 +1,51 @@
 package com.feieryuu.generator;
 
+import com.feieryuu.generator.DynamicGenerator;
+import com.feieryuu.generator.StaticGenerator;
 import com.feieryuu.model.MainTemplateConfig;
+import freemarker.template.TemplateException;
 
 import java.io.File;
+import java.io.IOException;
 
 /**
- * ClassName: MainGenerator
- * Description:
- * date: 2024/9/10 0:40
- *
- * @author 飞飞鱼
- * @since JDK 1.8
+ * 核心生成器
  */
 public class MainGenerator {
 
+    /**
+     * 生成
+     *
+     * @param model 数据模型
+     * @throws TemplateException
+     * @throws IOException
+     */
+    public static void doGenerate(Object model) throws TemplateException, IOException {
+        String inputRootPath = "F:\\JavaCode\\FeierYuu-CodeGenerator\\FeierYuu-CodeGenerator-demoProject\\acm-template-pro";
+        String outputRootPath = "F:\\JavaCode\\FeierYuu-CodeGenerator\\acm-template-pro";
 
-    public static void doGenerate(Object model)throws Exception{
-        String projectPath = System.getProperty("user.dir");
+        String inputPath;
+        String outputPath;
 
-        File parentFile = new File(projectPath).getParentFile();
-        // 输入路径
-        String inputPath = new File(parentFile,"FeierYuu-CodeGenerator-demoProject/acm-template").getAbsolutePath();
-        // 输出路径
-        String outputPath = projectPath;
+        inputPath = new File(inputRootPath, "src/com/yupi/acm/MainTemplate.java.ftl").getAbsolutePath();
+        outputPath = new File(outputRootPath, "src/com/yupi/acm/MainTemplate.java").getAbsolutePath();
+        DynamicGenerator.doGenerate(inputPath, outputPath, model);
 
-        StaticGenerator.copyFilesByRecursive(inputPath, outputPath);
+        inputPath = new File(inputRootPath, ".gitignore").getAbsolutePath();
+        outputPath = new File(outputRootPath, ".gitignore").getAbsolutePath();
+        StaticGenerator.CopyFileByHutool(inputPath, outputPath);
 
-
-
-        String DynamicInputPath = projectPath+ File.separator+"src/main/resources/templates/MyTemplate.java.ftl";
-        String DynamicOutputPath = projectPath + File.separator + "acm-template/src/com/yupi/acm/MainTemplate.java";
-
-        DynamicGenerator.doGenerate(DynamicInputPath, DynamicOutputPath, model);
+        inputPath = new File(inputRootPath, "README.md").getAbsolutePath();
+        outputPath = new File(outputRootPath, "README.md").getAbsolutePath();
+        StaticGenerator.CopyFileByHutool(inputPath, outputPath);
     }
 
-
-    public static void main(String[] args)throws Exception {
+    public static void main(String[] args) throws TemplateException, IOException {
         MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        mainTemplateConfig.setAuthor("3213");
-        mainTemplateConfig.setLoop(true);
-        mainTemplateConfig.setOutputText("结果");
+        mainTemplateConfig.setAuthor("FeierYuu");
+        mainTemplateConfig.setLoop(false);
+        mainTemplateConfig.setOutputText("求和结果：");
         doGenerate(mainTemplateConfig);
     }
-
 
 }

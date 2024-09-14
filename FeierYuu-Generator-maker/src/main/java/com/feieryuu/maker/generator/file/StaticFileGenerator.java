@@ -19,7 +19,7 @@ public class StaticFileGenerator {
      * @param outPutPath 输出路径
      */
     public  static void CopyFileByHutool(String inputPath, String outPutPath){
-        FileUtil.copy(inputPath,outPutPath,false);
+        FileUtil.copy(inputPath,outPutPath,true);
     }
 
 
