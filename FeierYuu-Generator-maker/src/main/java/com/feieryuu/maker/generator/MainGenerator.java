@@ -24,6 +24,12 @@ public class MainGenerator {
             FileUtil.mkdir(outputPath);
         }
 
+        //复制从原始模板文件 复制到生成的代码包中
+        String sourceRootPath=meta.getFileConfig().getSourceRootPath();
+        String sourceCopyDestPath=outputPath + File.separator+".source";
+        FileUtil.copy(sourceRootPath, sourceCopyDestPath, true);
+
+
         // 读取 resources 目录
         ClassPathResource classPathResource = new ClassPathResource("");
         String inputResourcePath = classPathResource.getAbsolutePath();
@@ -79,12 +85,34 @@ public class MainGenerator {
         outputFilePath = outputPath +File.separator+ "pom.xml";
         DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
 
+        //README.md
+        inputFilePath = inputResourcePath + File.separator + "templates/README.md.ftl";
+        outputFilePath = outputPath +File.separator+ "README.md";
+        DynamicFileGenerator.doGenerate(inputFilePath , outputFilePath, meta);
 
         //生成脚本文件
         String shellOutPutFilePath= outputPath + File.separator + "generator";
         String jarName=String.format("%s-%s-jar-with-dependencies.jar",meta.getName(),meta.getVersion());
         String jarPath="target/"+jarName;
         ScriptGenerator.doGenerate(shellOutPutFilePath, jarPath);
+
+
+        //生成精简的代码生成包--dist
+        String distOutPutPath=outputPath+"-dist";
+        //拷贝jar包
+        String targetAbsolutePath= distOutPutPath+File.separator+"target";
+        if (FileUtil.exist(targetAbsolutePath)){
+            FileUtil.mkdir(targetAbsolutePath);
+        }
+        String jarAbsolutePath=outputPath+File.separator+jarPath;
+        FileUtil.copy(jarAbsolutePath, targetAbsolutePath,true);
+
+        //拷贝脚本文件
+        FileUtil.copy(shellOutPutFilePath, distOutPutPath,true);
+        FileUtil.copy(shellOutPutFilePath+".bat", distOutPutPath,true);
+
+        //拷贝模板文件
+        FileUtil.copy(sourceCopyDestPath, distOutPutPath,true);
 
     }
 }
