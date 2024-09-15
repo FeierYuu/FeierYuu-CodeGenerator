@@ -11,6 +11,7 @@ import freemarker.template.TemplateException;
 import java.io.File;
 import java.io.IOException;
 
+
 public class MainGenerator {
 
     public static void main(String[] args) throws TemplateException, IOException {
@@ -113,6 +114,7 @@ public class MainGenerator {
 
         //拷贝模板文件
         FileUtil.copy(sourceCopyDestPath, distOutPutPath,true);
+
 
     }
 }

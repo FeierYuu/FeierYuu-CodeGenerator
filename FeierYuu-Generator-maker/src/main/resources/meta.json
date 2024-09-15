@@ -6,7 +6,7 @@
   "author": "FeierYuu",
   "createTime": "2024-9-14",
   "fileConfig": {
-    "inputRootPath": ".source/acm-template-pro",
+    "inputRootPath": "./source/acm-template-pro",
     "sourceRootPath": "F:/JavaCode/FeierYuu-CodeGenerator/FeierYuu-CodeGenerator-demoProject/acm-template-pro",
     "outputRootPath": "generated",
     "type": "dir",
