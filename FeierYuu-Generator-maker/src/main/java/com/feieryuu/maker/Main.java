@@ -1,14 +1,13 @@
 package com.feieryuu.maker;
 
-import com.feieryuu.maker.cli.CommandExecutor;
+import com.feieryuu.maker.generator.MainGenerator;
+import freemarker.template.TemplateException;
+
+import java.io.IOException;
 
 public class Main {
-
-    public static void main(String[] args) {
-        args = new String[]{"generate", "-l", "-a", "-o"};
-//        args = new String[]{"config"};
-//        args = new String[]{"list"};
-        CommandExecutor commandExecutor = new CommandExecutor();
-        commandExecutor.doExecute(args);
+    public static void main(String[] args) throws TemplateException, IOException, InterruptedException {
+        MainGenerator mainGenerator = new MainGenerator();
+        mainGenerator.doGenerate();
     }
 }
