@@ -1,6 +1,7 @@
 package com.feieryuu.maker.model;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * ClassName: MainTemplateConfig
@@ -11,6 +12,7 @@ import lombok.Data;
  * @since JDK 1.8
  */
 @Data
+@Accessors(fluent = true)
 public class DataModel {
 //   是否生成循环
     private  boolean loop;

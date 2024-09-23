@@ -17,8 +17,7 @@ import java.nio.file.Paths;
 
 /**
  * 代码生成器
- *
  */
 public class MainGenerator extends GenerateTemplate {
-
+    
 }
