@@ -1,7 +1,6 @@
 package com.feieryuu.maker.generator.file;
 
 import cn.hutool.core.io.FileUtil;
-import com.feieryuu.maker.model.DataModel;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -25,9 +24,9 @@ public class DynamicFileGenerator {
     /**
      * 生成文件
      *
-     * @param inputPath 模板文件输入路径
+     * @param inputPath  模板文件输入路径
      * @param outputPath 输出路径
-     * @param model 数据模型
+     * @param model      数据模型
      * @throws IOException
      * @throws TemplateException
      */
