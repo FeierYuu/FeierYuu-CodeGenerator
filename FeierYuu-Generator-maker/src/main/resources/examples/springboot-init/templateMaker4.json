@@ -1,0 +1,21 @@
+{
+  "id": 1,
+  "fileConfig": {
+    "files": [
+      {
+        "path": "src/main/java/com/yupi/project/config/Knife4jConfig.java",
+        "condition": "needCors"
+      }
+    ]
+  },
+  "modelConfig": {
+    "models": [
+      {
+        "fieldName": "needDocs",
+        "type": "boolean",
+        "description": "是否开启跨域功能",
+        "defaultValue": true
+      }
+    ]
+  }
+}
