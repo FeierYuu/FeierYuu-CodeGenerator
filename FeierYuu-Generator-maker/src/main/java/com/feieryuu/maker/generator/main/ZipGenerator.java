@@ -1,4 +1,4 @@
-package com.feieryuu.maker.generator;
+package com.feieryuu.maker.generator.main;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.io.file.PathUtil;
