@@ -33,9 +33,9 @@ public class UserVO implements Serializable {
     private String userAvatar;
 
     /**
-     * 性别
+     * 用户简介
      */
-    private Integer gender;
+    private String userProfile;
 
     /**
      * 用户角色: user, admin

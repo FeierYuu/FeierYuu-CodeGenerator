@@ -1,7 +1,7 @@
 package com.feieryuu.web.mapper;
 
-import com.feieryuu.web.model.entity.Generator;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.feieryuu.web.model.entity.Generator;
 
 /**
  * @Entity com.feieryuu.web.model.entity.Generator

@@ -2,7 +2,6 @@ package com.feieryuu.web.model.vo;
 
 import cn.hutool.json.JSONUtil;
 import com.feieryuu.web.meta.Meta;
-
 import com.feieryuu.web.model.entity.Generator;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;

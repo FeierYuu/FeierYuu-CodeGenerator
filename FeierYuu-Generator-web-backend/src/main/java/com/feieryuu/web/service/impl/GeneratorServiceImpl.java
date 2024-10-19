@@ -11,7 +11,6 @@ import com.feieryuu.web.exception.ThrowUtils;
 import com.feieryuu.web.mapper.GeneratorMapper;
 import com.feieryuu.web.model.dto.generator.GeneratorQueryRequest;
 import com.feieryuu.web.model.entity.Generator;
-
 import com.feieryuu.web.model.entity.User;
 import com.feieryuu.web.model.vo.GeneratorVO;
 import com.feieryuu.web.model.vo.UserVO;
@@ -89,7 +88,7 @@ public class GeneratorServiceImpl extends ServiceImpl<GeneratorMapper, Generator
 
         // 拼接查询条件
         if (StringUtils.isNotBlank(searchText)) {
-            queryWrapper.and(qw -> qw.like("title", searchText).or().like("content", searchText));
+            queryWrapper.and(qw -> qw.like("name", searchText).or().like("description", searchText));
         }
         queryWrapper.like(StringUtils.isNotBlank(name), "name", name);
         queryWrapper.like(StringUtils.isNotBlank(description), "description", description);

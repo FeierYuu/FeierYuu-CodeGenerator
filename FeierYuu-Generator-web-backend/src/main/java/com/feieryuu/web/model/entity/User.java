@@ -14,11 +14,22 @@ import java.util.Date;
 @TableName(value = "user")
 @Data
 public class User implements Serializable {
+
     /**
      * id
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
+
+    /**
+     * 用户账号
+     */
+    private String userAccount;
+
+    /**
+     * 用户密码
+     */
+    private String userPassword;
 
     /**
      * 用户昵称
@@ -26,29 +37,19 @@ public class User implements Serializable {
     private String userName;
 
     /**
-     * 账号
-     */
-    private String userAccount;
-
-    /**
      * 用户头像
      */
     private String userAvatar;
 
     /**
-     * 性别
+     * 用户简介
      */
-    private Integer gender;
+    private String userProfile;
 
     /**
-     * 用户角色: user, admin
+     * 用户角色：user/admin/ban
      */
     private String userRole;
-
-    /**
-     * 密码
-     */
-    private String userPassword;
 
     /**
      * 创建时间

@@ -1,6 +1,8 @@
 ### custom template
 .temp
 .idea
+application-local.yml
+application-prod.yml
 FeierYuu-CodeGenerator.iml
 generated/
 # Default ignored files
