@@ -121,9 +121,8 @@ const GeneratorDetailPage: React.FC = () => {
             <div style={{ marginBottom: 24 }} />
             <Space size="middle">
               <Link to={`/generator/use/${data.id}`}>
-                <Button type='dashed'>查看详情</Button>
+                <Button type="primary">立即使用</Button>
               </Link>
-              <Button type="default">立即使用</Button>
               {downloadButton}
               {editButton}
             </Space>

@@ -1,6 +1,6 @@
 package com.feieryuu.web.model.dto.generator;
 
-import com.feieryuu.web.meta.Meta;
+import com.feieryuu.maker.meta.Meta;
 import lombok.Data;
 
 import java.io.Serializable;

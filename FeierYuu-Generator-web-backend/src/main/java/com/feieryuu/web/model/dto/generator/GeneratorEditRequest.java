@@ -2,7 +2,8 @@ package com.feieryuu.web.model.dto.generator;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
-import com.feieryuu.web.meta.Meta;
+
+import com.feieryuu.maker.meta.Meta;
 import lombok.Data;
 
 import java.io.Serializable;
