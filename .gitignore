@@ -1,7 +1,7 @@
 ### custom template
 .temp
 .idea
-FeierYuu-Generator-web-backend/src/main/resources/application-local.yml
+FeierYuu-Generator-web-backend/**/application-local.yml
 acm-template-pro
 FeierYuu-CodeGenerator.iml
 generated/
