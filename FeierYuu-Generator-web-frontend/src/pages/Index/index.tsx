@@ -156,8 +156,8 @@ const IndexPage: React.FC = () => {
         }}
         renderItem={(data) => (
           <List.Item>
-            <Link to={`/generator/detail/${data.id}`}>
             <Card hoverable cover={<Image alt={data.name} src={data.picture} style={{width: '100%',height: '250px',objectFit:'cover'}}/>}>
+            <Link to={`/generator/detail/${data.id}`}>
               <Card.Meta
                 title={<a>{data.name}</a>}
                 description={
@@ -175,8 +175,8 @@ const IndexPage: React.FC = () => {
                   <Avatar src={data.user?.userAvatar ?? <UserOutlined />} />
                 </div>
               </Flex>
-            </Card>
             </Link>
+            </Card>
           </List.Item>
         )}
       />
