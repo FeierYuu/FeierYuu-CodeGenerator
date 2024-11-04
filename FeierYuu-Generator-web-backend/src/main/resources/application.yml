@@ -49,6 +49,5 @@ knife4j:
         api-rule-resources:
           - com.feieryuu.web.controller
 
-# 本地配置文件
-# 对象存储
+
 
