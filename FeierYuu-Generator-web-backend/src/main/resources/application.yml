@@ -51,10 +51,4 @@ knife4j:
 
 # 本地配置文件
 # 对象存储
-cos:
-  client:
-    accessKey: xxx
-    secretKey: xxx
-    region: xxx
-    bucket: xxx
 

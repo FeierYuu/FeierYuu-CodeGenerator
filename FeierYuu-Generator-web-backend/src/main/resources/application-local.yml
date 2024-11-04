@@ -63,12 +63,6 @@ knife4j:
 
 # 本地配置文件
 # 对象存储
-cos:
-  client:
-    accessKey: AKIDBDAzhS4TvHQM7eAfzQfhcZRICyhGhutg
-    secretKey: jEWZO1rY3LPHxQggRyHmGYeYM4Zt7B2h
-    region: ap-beijing
-    bucket: feieryuu-generator-1310026476
 
 
 
