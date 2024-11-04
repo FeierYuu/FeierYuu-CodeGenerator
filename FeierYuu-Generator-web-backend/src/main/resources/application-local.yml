@@ -12,8 +12,8 @@ spring:
       matching-strategy: ANT_PATH_MATCHER
   servlet:
     multipart:
-      max-file-size: 10MB
-      max-request-size: 10MB
+      max-file-size: 100MB
+      max-request-size: 100MB
   
   # session 失效时间（分钟）
   session:
@@ -24,10 +24,19 @@ spring:
     port: 6379
     host: localhost
     database: 1
+    timeout: 5000
 server:
   port: 8120
   servlet:
     context-path: /api
+    session:
+      cookie:
+        max-age: 2592000
+  tomcat:
+    max-connections: 100000
+    threads:
+      max: 1000
+    accept-count: 1000
 
 mybatis-plus:
   configuration:
@@ -60,3 +69,6 @@ cos:
     secretKey: jEWZO1rY3LPHxQggRyHmGYeYM4Zt7B2h
     region: ap-beijing
     bucket: feieryuu-generator-1310026476
+
+
+

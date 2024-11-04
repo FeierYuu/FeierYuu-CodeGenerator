@@ -1,12 +1,14 @@
 import CreateModal from '@/pages/Admin/Generator/components/CreateModal';
 import UpdateModal from '@/pages/Admin/Generator/components/UpdateModal';
-import { deleteGeneratorUsingPost, listGeneratorByPageUsingPost, listGeneratorVoByPageUsingPost } from '@/services/backend/generatorController';
+import {
+  deleteGeneratorUsingPost,
+  listGeneratorByPageUsingPost,
+} from '@/services/backend/generatorController';
 import { PlusOutlined } from '@ant-design/icons';
 import type { ActionType, ProColumns } from '@ant-design/pro-components';
-import { PageContainer, ProTable } from '@ant-design/pro-components';
+import { ProTable } from '@ant-design/pro-components';
 import '@umijs/max';
-import { Select } from 'antd'; // 确保 Select 组件被正确导入
-import { Button, message, Space, Tag, Typography } from 'antd';
+import { Button, message, Select, Space, Tag, Typography } from 'antd';
 import React, { useRef, useState } from 'react';
 
 /**
@@ -85,12 +87,12 @@ const GeneratorAdminPage: React.FC = () => {
       title: '标签',
       dataIndex: 'tags',
       valueType: 'text',
-     renderFormItem(schema) {
+      renderFormItem(schema) {
         const { fieldProps } = schema;
         // @ts-ignore
         return <Select mode="tags" {...fieldProps} />;
       },
-      render(_ :any, record:any) {
+      render(_, record) {
         if (!record.tags) {
           return <></>;
         }
@@ -158,7 +160,7 @@ const GeneratorAdminPage: React.FC = () => {
       title: '操作',
       dataIndex: 'option',
       valueType: 'option',
-      render: (_ :any, record:any) => (
+      render: (_, record) => (
         <Space size="middle">
           <Typography.Link
             onClick={() => {
@@ -175,9 +177,12 @@ const GeneratorAdminPage: React.FC = () => {
       ),
     },
   ];
+
   return (
-    <div className='generator-admin-page'>
-      <Typography.Title level={3} style={{textAlign:'center', marginBottom:16}}>代码生成器管理</Typography.Title>
+    <div className="generator-admin-page">
+      <Typography.Title level={4} style={{ marginBottom: 16 }}>
+        生成器管理
+      </Typography.Title>
       <ProTable<API.Generator>
         headerTitle={'查询表格'}
         actionRef={actionRef}
@@ -196,7 +201,7 @@ const GeneratorAdminPage: React.FC = () => {
             <PlusOutlined /> 新建
           </Button>,
         ]}
-        request={async (params :any, sort :any, filter :any) => {
+        request={async (params, sort, filter) => {
           const sortField = Object.keys(sort)?.[0];
           const sortOrder = sort?.[sortField] ?? undefined;
 
