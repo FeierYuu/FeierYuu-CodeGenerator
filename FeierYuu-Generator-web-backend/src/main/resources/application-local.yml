@@ -12,9 +12,9 @@ spring:
       matching-strategy: ANT_PATH_MATCHER
   servlet:
     multipart:
-      max-file-size: 100MB
-      max-request-size: 100MB
-  
+      max-file-size: 10MB
+      max-request-size: 10MB
+
   # session 失效时间（分钟）
   session:
     timeout: 86400
@@ -24,19 +24,10 @@ spring:
     port: 6379
     host: localhost
     database: 1
-    timeout: 5000
 server:
   port: 8120
   servlet:
     context-path: /api
-    session:
-      cookie:
-        max-age: 2592000
-  tomcat:
-    max-connections: 100000
-    threads:
-      max: 1000
-    accept-count: 1000
 
 mybatis-plus:
   configuration:
@@ -61,7 +52,11 @@ knife4j:
         api-rule-resources:
           - com.feieryuu.web.controller
 
-
-
-
-
+# 本地配置文件
+# 对象存储
+cos:
+  client:
+    accessKey:
+    secretKey:
+    region:
+    bucket:
