@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/FeierYuu-Generator-basic/pom.xml" />
         <option value="$PROJECT_DIR$/FeierYuu-Generator-maker/pom.xml" />
+        <option value="$PROJECT_DIR$/FeierYuu-Generator-web-backend/pom.xml" />
       </list>
     </option>
   </component>
