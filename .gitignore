@@ -3,6 +3,7 @@
 .idea
 application-local.yml
 application-prod.yml
+acm-template-pro
 FeierYuu-CodeGenerator.iml
 generated/
 # Default ignored files
