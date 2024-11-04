@@ -3,7 +3,7 @@
   "fileConfig": {
     "files": [
       {
-        "path": "src/main/java/com/yupi/project/model/dto/post/PostEsDTO.java",
+        "path": "src/main/java/com/feieryuu/project/model/dto/post/PostEsDTO.java",
         "condition": "needPost && needEs"
       }
     ]
@@ -14,7 +14,7 @@
         "fieldName": "needEs",
         "type": "boolean",
         "description": "是否开启ES功能",
-        "defaultValue": true
+        "defaultValue": false
       }
     ]
   }

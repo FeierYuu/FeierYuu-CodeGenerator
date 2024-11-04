@@ -6,7 +6,7 @@
         "path": "src/main/resources/application.yml"
       },
       {
-        "path": "src/main/java/com/yupi/project/MyApplication.java"
+        "path": "src/main/java/com/feieryuu/project/MyApplication.java"
       },
       {
         "path": "pom.xml"

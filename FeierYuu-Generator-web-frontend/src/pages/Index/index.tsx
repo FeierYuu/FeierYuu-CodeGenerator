@@ -1,6 +1,7 @@
-import { listGeneratorVoByPageUsingPost } from '@/services/backend/generatorController';
+import { listGeneratorVoByPageFastUsingPost, listGeneratorVoByPageUsingPost } from '@/services/backend/generatorController';
 import { UserOutlined } from '@ant-design/icons';
 import { PageContainer, ProFormSelect, ProFormText, QueryFilter } from '@ant-design/pro-components';
+import { Link } from '@umijs/max';
 import { Avatar, Card, Flex, Image, Input, List, message, Tabs, Tag, Typography } from 'antd';
 import moment from 'moment';
 import React, { useEffect, useState } from 'react';
@@ -34,7 +35,7 @@ const IndexPage: React.FC = () => {
   const doSearch = async () => {
     setLoading(true);
     try {
-      const res = await listGeneratorVoByPageUsingPost(searchParams);
+      const res = await listGeneratorVoByPageFastUsingPost(searchParams);
       setDataList(res.data?.records ?? []);
       setTotal(Number(res.data?.total) ?? 0);
     } catch (error: any) {
@@ -155,6 +156,7 @@ const IndexPage: React.FC = () => {
         }}
         renderItem={(data) => (
           <List.Item>
+            <Link to={`/generator/detail/${data.id}`}>
             <Card hoverable cover={<Image alt={data.name} src={data.picture} style={{width: '100%',height: '250px',objectFit:'cover'}}/>}>
               <Card.Meta
                 title={<a>{data.name}</a>}
@@ -174,6 +176,7 @@ const IndexPage: React.FC = () => {
                 </div>
               </Flex>
             </Card>
+            </Link>
           </List.Item>
         )}
       />
