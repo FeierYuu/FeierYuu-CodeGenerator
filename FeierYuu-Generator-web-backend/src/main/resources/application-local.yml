@@ -56,7 +56,7 @@ knife4j:
 # 对象存储
 cos:
   client:
-    accessKey:
-    secretKey:
-    region:
-    bucket:
+    accessKey: AKIDBDAzhS4TvHQM7eAfzQfhcZRICyhGhutg
+    secretKey: jEWZO1rY3LPHxQggRyHmGYeYM4Zt7B2h
+    region: ap-beijing
+    bucket: feieryuu-generator-1310026476

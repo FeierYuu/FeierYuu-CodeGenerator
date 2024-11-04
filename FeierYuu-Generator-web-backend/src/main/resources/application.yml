@@ -48,5 +48,9 @@ knife4j:
         api-rule: package
         api-rule-resources:
           - com.feieryuu.web.controller
-
-
+cos:
+  client:
+    accessKey: xx
+    secretKey: xx
+    region: xx
+    bucket: xx
